@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{fancyhdr}
+\usepackage{url}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{color,soul}
+\usepackage{booktabs}
+\usepackage{soul}
+
+\newcommand{\sub}[1]{
+\hrulefill
+\vspace{-5mm}
+\subsection*{#1}
+\vspace{-5mm}
+\hrulefill
+\vspace{-2.5mm}
+}
+
+\setlength\parindent{0pt}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=navy,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+%\pagestyle{fancy}
+
+%\lhead{\fancyplain{}{}}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+%\cfoot{\thepage}
+\rfoot{}
+%\renewcommand{\headrulewidth}{0.2pt}
+%\renewcommand{\footrulewidth}{0.0pt}
+
+\title{BSTA 001:\\Population Health Data Science (PHDS) - I}
+\author{prof mcandrew}
+\date{Fall 2021}
+
+\begin{document}
+\begin{center}
+{\large BSTA001: Population Health Data Science - I}
+\end{center}
+
+
+\sub{Coordinates and Contact} 
+\vspace{1mm}
+
+instructor: tom mcandrew
+
+email: \url{mcandrew@lehigh.edu}
+
+office coordinates: HST 175
+
+office hours: To be voted on by students $\vert$ by appt.
+
+\sub{Class logistics and resources:} 
+
+
+\paragraph{Class time and location} \mbox{}
+Monday, Wednesdays 12:10pm - 1:25pm  in Packard Lab 258 
+
+\paragraph{Course Website} 
+I will update course website at \url{http://thomasmcandrew.com/classes/2021F_PHDS2/public/} regularly with short videos meant to support classroom learning.
+Homework assignments, the Midterm, and the Final will be distributed in class.
+
+\paragraph{Tentative timeline}
+\hspace{1mm}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{ll}
+        \hline
+        Topic & Timeline\\
+        \hline
+        Sets, Sample Space, Probability \dotfill & Weeks 1-2  \\
+        Random variables \dotfill & Week 3\\
+        Functions of Random variables and the Law of Large Numbers \dotfill & Week 4\\
+        Bernoulli, Binomial Distribution, and Poisson Distribution \dotfill &Weeks 4-5\\
+        Geometric and Hypergeometric Distribution\dotfill &Week 6\\
+        Multivariate Distributions\dotfill &Week 7\\
+        Midterm \dotfill\\
+        Sampling, Parameters, and Statistics\dotfill &Week 8\\
+        Hypotheses and testing\dotfill &Week 9\\
+        Confidence intervals \dotfill &Week 10\\
+        Chi-square test\dotfill &Week 11\\
+        Simple linear regression\dotfill &Week 12-14\\
+        Final \dotfill\\
+        \hline
+    \end{tabular}
+\end{table}
+    
+\paragraph{Textbook}
+
+We will mostly follow notes and the text provided here:
+\href{https://github.com/tomcm39/2022S-BSTA001-Textbook/blob/main/phds.pdf}{Textbook}.
+This is a textbook that i am writing specifically for this class.
+
+The following open source (free) materials for class may also be helpful but are not required:
+\begin{itemize}
+   \item \href{https://www.openintro.org/go/?id=biostat0&referrer=/book/biostat/index.php}{Introductory Statistics for the Life and Biomedical Sciences}
+   \item \href{https://www.inferentialthinking.com/chapters/intro.html}{Computational and Inferential Thinking}
+\end{itemize} 
+
+\paragraph{Time commitment}
+
+I recommend budgeting approximately three out-of-class hours for every in-class hour to complete the reading, assignments, and homework.
+Twelve hours per week spent on class should be enough time to complete class requirements.  
+If you spend more than 12 hours per week on a regular basis, I encourage you to check in with me.
+
+\paragraph{Scheduling an appointment}
+Students can schedule times for us to meet.
+I am happy to meet with a student one on one or as a group of 2-10 students.
+Appointments should be scheduled in advance and not last minute.
+
+
+\sub{Policies}
+\paragraph{Attendance}
+Your attendance in class is crucial.
+If you are sick or otherwise cannot attend class, please let me know and stay home and rest.
+If you miss a quiz or exam due to illness or an otherwise excused absence you will have an opportunity to make up that evaluation.
+
+
+\paragraph{Collaboration}
+Much of this course will operate on a collaborative basis, and you are encouraged to work together with a partner or in small groups to study, complete homework assignments, and prepare for exams.
+However, every word that you write must be your own.
+Copying and pasting sentences, paragraphs from another student is not acceptable and will receive no credit or a penalty.
+No interaction with anyone but the instructor is allowed on any exams or quizzes.
+All students, staff, and faculty are bound by the Lehigh University Honor Code.\\
+
+To sum up: On homeworks
+\textbf{I want you to work together, but you must write up your answers yourself.}
+Dishonesty, plagiarism, etc., will be reported.
+
+\sub{Technology}
+
+\paragraph{Computing}
+We will use \href{https://www.python.org/}{Python 3} throughout this course to illustrate statistical concepts applied to datasets.
+However, students are \textbf{not} required to code on assignments.
+Coding is reserved for BSTA103---Algorithms Lab II. 
+
+\sub{Assignments}
+
+\vspace{1mm}
+Your grade for this course will be a weighted average of scores from several components:
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{ll}
+        \hline
+        Item & Weight \\
+        \hline
+        Quizes  \dotfill &  25\% \\
+        Homework\dotfill & 50\% \\ 
+        Midterm \dotfill&  12.5\%\\
+        Final \dotfill& 12.5\% \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\paragraph{Homework}
+
+Homework assignments will be due one week from the date that they are assigned, and assignments will be delivered to the instructor in-person.
+We will not use course site to submit homework assignments, however, your grades and graded assignments will be uploaded to course site.
+A late homework assignment will receive a reduced grade according to the following formula: 
+\begin{align*}
+    f( \text{grade}, \text{days late} ) = \text{grade} \times e^{-0.35*\text{number of days late}} 
+\end{align*}
+For example, if you would have scored a 80\% on a homework assignment and handed this assignment in 2 days late then your new score is
+\begin{align*}
+   f(80,2) = 80 \times e^{-0.35 \cdot 2} = 40\% 
+\end{align*}
+An assignment is one day late if it is 5 minutes past the due date. 
+
+\paragraph{Exams}
+There is one midterm exam and one final exam.
+Both the \textbf{midterm} and \textbf{final} will be in-class exams and you are given the entire class period to take them.
+A \textbf{quiz} will be assigned at the end of every class period and be due at midnight the same day. 
+Quizes are not meant to be difficult, they are meant to test whether you were actively engaged in class. \textbf{No communication} with anyone besides the instructor is allowed on both exams and quizes.
+
+\paragraph{Discussion about grades}
+Students are welcome to discuss how their assignments were graded. However, students have one week to discuss grades with the instructor after which grades are final. 
+
+\paragraph{Extra Credit}
+Extra credit is available in several ways: attending an out-of-class lecture (as will be announced) and writing a short review of it; pointing out a substantial mistake in the book, a homework exercise or exam solution, drawing my attention to an interesting data set or news article; etc. Extra credit is typically applied when a student is near the boundary of a letter grade.
+
+\paragraph{Grading}
+When grading your written work, I am looking for solutions that are technically correct and reasoning that is clearly explained.  \emph{Numerically correct answers, alone, are not sufficient} on homework, tests or quizzes.  Neatness and organization are valued, with brief, clear answers that explain your thinking.  If I cannot read or follow your work, I cannot give you full credit for it.
+
+\paragraph{Accommodations for Students with Disabilities}
+Lehigh University is committed to maintaining an equitable and inclusive community and welcomes students with disabilities into all of the University’s educational programs.  In order to receive consideration for reasonable accommodations, a student with a disability must contact Disability Support Services (DSS), provide documentation, and participate in an interactive review process.  If the documentation supports a request for reasonable accommodations, DSS will provide students with a Letter of Accommodations. Students who are approved for accommodations at Lehigh should share this letter and discuss their accommodations and learning needs with instructors as early in the semester as possible.  For more information or to request services, please contact Disability Support Services in person in Williams Hall, Suite 301, via phone at 610-758-4152, via email at indss@lehigh.edu, or online at \url{https://studentaffairs.lehigh.edu/disabilities}.
+
+\paragraph{The Principles of Our Equitable Community:}
+Lehigh University endorses \href{http://www.lehigh.edu/~inprv/initiatives/PrinciplesEquity_Sheet_v2_032212.pdf}{The Principles of Our Equitable Community}. We expect each member of this class to acknowledge and practice these Principles. Respect for each other and for differing viewpoints is a vital component of the learning environment inside and outside the classroom.
+
+\end{document}
